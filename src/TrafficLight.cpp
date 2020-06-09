@@ -74,7 +74,7 @@ void TrafficLight::cycleThroughPhases()
     while(true){
         
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
-        auto current_time = std::chrono:system_clock::now();
+        auto current_time = std::chrono::system_clock::now();
         if(std::chrono::duration_cast<std::chrono::duration<double, std::ratio<1> > >(current_time - last_time).count() >= wait_duration_in_second){
             last_time = current_time;
             wait_duration_in_second = (std::rand() % 3) + 4;
